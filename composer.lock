@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0d2b01a8e29ac0fee1b56d6312647c3",
+    "content-hash": "8ed03a3731c6272c0dd2d79debcb970d",
     "packages": [
         {
             "name": "brick/math",
@@ -1346,17 +1346,17 @@
             "time": "2023-01-04T21:57:05+00:00"
         },
         {
-            "name": "hammerstone/refine-nova",
-            "version": "dev-af-new-frontend",
+            "name": "hammerstone/refine-nova4",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "../refine-nova",
-                "reference": "b46a5d8fb94d99580b7e946554fb2571975230fa"
+                "url": "../refine-nova4",
+                "reference": "fcbe573fa120b3b18aec4812e9fab91dc30471bb"
             },
             "require": {
                 "hammerstone/refine-laravel": "^0.3.4",
-                "laravel/nova": "^2.12|^3.0|^4.0",
-                "php": "^7.2|^8.0"
+                "laravel/nova": "^4.0",
+                "php": "^7.3|^8.0"
             },
             "type": "library",
             "extra": {
@@ -1374,7 +1374,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "A Laravel Nova integration for the Refine query builder.",
+            "description": "A Laravel Nova 4 integration for the Refine query builder.",
             "keywords": [
                 "laravel",
                 "nova"
@@ -8902,9 +8902,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "hammerstone/refine-nova": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

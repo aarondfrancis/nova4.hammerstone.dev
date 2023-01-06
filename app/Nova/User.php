@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Hammerstone\Refine\Nova\Refine;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\Gravatar;
@@ -73,7 +74,9 @@ class User extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            new Refine()
+        ];
     }
 
     /**
