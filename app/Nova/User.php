@@ -2,17 +2,28 @@
 
 namespace App\Nova;
 
+use App\Filters\UserFilter;
+use App\Nova\Filters\UserType;
+use Closure;
 use Hammerstone\Refine\Nova\Refine;
+use Hammerstone\Refine\Nova\RefinesModels;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Field;
+use Laravel\Nova\Fields\FieldCollection;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Nova;
 
 class User extends Resource
 {
+    use RefinesModels;
+
     /**
      * The model the resource corresponds to.
      *
@@ -26,6 +37,8 @@ class User extends Resource
      * @var string
      */
     public static $title = 'name';
+
+    public static $filter = UserFilter::class;
 
     /**
      * The columns that should be searched.
@@ -63,7 +76,10 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+
+            Date::make('Created At'),
         ];
+
     }
 
     /**
@@ -75,7 +91,7 @@ class User extends Resource
     public function cards(NovaRequest $request)
     {
         return [
-            new Refine()
+            static::refineCard()
         ];
     }
 
@@ -87,7 +103,9 @@ class User extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+//            new UserType()
+        ];
     }
 
     /**
